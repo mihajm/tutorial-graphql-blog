@@ -1,6 +1,6 @@
 import {gql, RequestDocument} from 'graphql-request';
 
-const postQuery: RequestDocument = gql`
+const PostQuery: RequestDocument = gql`
 query PostsQuery {
     postsConnection {
         edges {
@@ -34,4 +34,4 @@ query PostsQuery {
 }
 `;
 
-export default postQuery;
+export default PostQuery;
