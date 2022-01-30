@@ -5,7 +5,7 @@ const PostCardContent = ({excerpt}: PostCardContentProps) => (
 );
 
 type PostCardContentProps = {
-    excerpt: string,
+    excerpt?: string,
 }
 
 export default PostCardContent;

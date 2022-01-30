@@ -2,6 +2,7 @@ import Head from 'next/head';
 
 import {PostCard, Categories, PostWidget} from '../components';
 import {Post} from '../data/Post';
+import {FeaturedPosts} from '../sections';
 import {getPosts} from '../services';
 
 const Home = ({posts}: HomeProps) => (
@@ -10,7 +11,7 @@ const Home = ({posts}: HomeProps) => (
 			<title>Graph Blog</title>
 			<link rel="icon" href="/favicon.ico" />
 		</Head>
-
+		<FeaturedPosts />
 		<div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
 
 			<div className="lg:col-span-8 col-span-1">

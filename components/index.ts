@@ -7,3 +7,5 @@ export {default as PostDetail} from './PostDetail/PostDetail';
 export {default as PostAuthor} from './PostAuthor/PostAuthor';
 export {default as PostComments} from './PostComments/PostComments';
 export {default as CommentForm} from './CommentForm/CommentForm';
+export {default as FeaturedPostCard} from './FeaturedPostCard/FeaturedPostCard';
+export {default as Loader} from './Loader';

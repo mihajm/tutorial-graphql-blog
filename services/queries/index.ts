@@ -3,3 +3,7 @@ export {default as RecentPostsQuery} from './RecentPostsQuery';
 export {default as SimilarPostsQuery} from './SimilarPostsQuery';
 export {default as CategoriesQuery} from './CategoriesQuery';
 export {default as PostDetailsQuery} from './PostDetailsQuery';
+export {default as CreateCommentQuery} from './CreateCommentQuery';
+export {default as PostCommentsQuery} from './PostCommentsQuery';
+export {default as FeaturedPostsQuery} from './FeaturedPostsQuery';
+export {default as CategoryPostQuery} from './CategoryPostQuery';
