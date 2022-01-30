@@ -1,12 +1,16 @@
+
 import {Author} from '../../../../data/Author';
 import {PostCardHeaderAuthor, PostCardHeaderDate, PostCardHeaderTitle} from './subcomponents';
 
 const PostCardHeader = ({slug, title, author, createdAt}: PostCardHeaderProps) => (
 	<>
-		<div className="block lg:flex text-center items-center justify-center mb-8 w-full">
+		<div className="block lg:flex text-center items-center justify-center flex-col mb-8 w-full">
 			<PostCardHeaderTitle slug={slug} title={title} />
-			<PostCardHeaderAuthor name={author.name} photo={author.photo} />
-			<PostCardHeaderDate createdAt={createdAt} />
+			<div className="lg:flex contents justify-center items-center w-full px-5">
+				<PostCardHeaderAuthor name={author.name} photo={author.photo} />
+				<PostCardHeaderDate createdAt={createdAt} />
+			</div>
+
 		</div>
 	</>
 
