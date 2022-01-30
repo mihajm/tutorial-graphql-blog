@@ -5,13 +5,12 @@ import {PostContent} from './PostContent';
 
 export interface Post {
     title: string,
-    excerpt: string,
+    excerpt?: string,
     slug: string,
-    featuredPost: boolean,
+    featuredPost?: boolean,
     featuredImage: PhotoAsset,
     createdAt: Date,
-    content: PostContent,
-    categories: Category[],
-    author: Author,
-
+    content?: PostContent,
+    categories?: Category[],
+    author?: Author,
 }

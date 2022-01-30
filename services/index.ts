@@ -1,10 +1,21 @@
-import {request, gql, RequestDocument} from 'graphql-request';
+import {request} from 'graphql-request';
+import {Category} from '../data/Category';
 import {Post} from '../data/Post';
-import {PostsQuery} from './queries';
+import {PostsQuery, RecentPostsQuery, SimilarPostsQuery} from './queries';
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 
 export const getPosts = async (): Promise<Post[]> => {
 	const result = await request(graphqlAPI!, PostsQuery);
 	return result.postsConnection.edges.map((pn: ({node: Post})) => pn.node);
+};
+
+export const getRecentPosts = async (): Promise<Post[]> => {
+	const result = await request(graphqlAPI!, RecentPostsQuery);
+	return result.posts;
+};
+
+export const getSimilarPosts = async (slug: string, categorySlugs: string[]): Promise<Post[]> => {
+	const result = await request(graphqlAPI!, SimilarPostsQuery);
+	return result.posts;
 };
