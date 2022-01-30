@@ -5,7 +5,7 @@ const CategoryLinks = ({categories}: CategoryLinksProps) => (
 	<div className="hidden md:float-left md:contents">
 		{categories.map(category => (
 			<Link key={category.slug} href={`/category/${category.slug}`}>
-				<span className="md:float-right mt-2 align-middle text-white ml-4 font-semibold cursor-pointer hover:text-gray-200">{category.name}</span>
+				<span className="transition duration-100 md:float-right mt-2 align-middle text-white ml-4 font-semibold cursor-pointer hover:text-pink-400">{category.name}</span>
 			</Link>
 		))}
 	</div>

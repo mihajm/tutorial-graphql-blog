@@ -2,16 +2,9 @@ import Head from 'next/head';
 
 import {PostCard, Categories, PostWidget} from '../components';
 import {Post} from '../data/Post';
+import {getPosts} from '../services';
 
-const posts: Post[] = [{
-	title: 'React testing',
-	excerpt: 'Lorem ipsum',
-}, {
-	title: 'React with tailwinds',
-	excerpt: 'dolor sit amet',
-}];
-
-const Home = () => (
+const Home = ({posts}: HomeProps) => (
 	<div className="container mx-auto px-10 mb-8">
 		<Head>
 			<title>Graph Blog</title>
@@ -36,4 +29,17 @@ const Home = () => (
 	</div>
 );
 
+export async function getStaticProps() {
+	const posts = (await getPosts()) || [];
+
+	return {
+		props: {posts},
+	};
+}
+
+type HomeProps = {
+	posts: Post[]
+;}
+
 export default Home;
+
