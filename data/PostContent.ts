@@ -1,3 +1,3 @@
 export interface PostContent {
-    html: string,
+    raw: string,
 }

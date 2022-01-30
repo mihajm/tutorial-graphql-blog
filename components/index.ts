@@ -3,3 +3,7 @@ export {default as Categories} from './Categories/Categories';
 export {default as PostWidget} from './PostWidget/PostWidget';
 export {default as Header} from './Header/Header';
 export {default as Layout} from './Layout/Layout';
+export {default as PostDetail} from './PostDetail/PostDetail';
+export {default as PostAuthor} from './PostAuthor/PostAuthor';
+export {default as PostComments} from './PostComments/PostComments';
+export {default as CommentForm} from './CommentForm/CommentForm';

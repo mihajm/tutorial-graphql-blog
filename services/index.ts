@@ -1,7 +1,7 @@
 import {request} from 'graphql-request';
 import {Category} from '../data/Category';
 import {Post} from '../data/Post';
-import {CategoriesQuery, PostsQuery, RecentPostsQuery, SimilarPostsQuery} from './queries';
+import {CategoriesQuery, PostDetailsQuery, PostsQuery, RecentPostsQuery, SimilarPostsQuery} from './queries';
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 
@@ -16,11 +16,16 @@ export const getRecentPosts = async (): Promise<Post[]> => {
 };
 
 export const getSimilarPosts = async (slug: string, categorySlugs: string[]): Promise<Post[]> => {
-	const result = await request(graphqlAPI!, SimilarPostsQuery);
+	const result = await request(graphqlAPI!, SimilarPostsQuery, {slug, categories: categorySlugs});
 	return result.posts;
 };
 
 export const getCategories = async (): Promise<Category[]> => {
 	const result = await request(graphqlAPI!, CategoriesQuery);
 	return result.categories;
+};
+
+export const getPostDetails = async (slug: string): Promise<Post> => {
+	const result = await request(graphqlAPI!, PostDetailsQuery, {slug});
+	return result.post;
 };
