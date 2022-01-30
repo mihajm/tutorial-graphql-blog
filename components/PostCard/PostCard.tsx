@@ -7,7 +7,7 @@ const PostCard = ({post}: PostCardProps) => (
 	</div>
 );
 
-export type PostCardProps = {
+type PostCardProps = {
     post: Post
 }
 
