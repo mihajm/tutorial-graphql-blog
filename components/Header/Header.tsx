@@ -9,7 +9,7 @@ const Header = () => {
 
 	useEffect(() => {
 		getCategories()
-			.then(cats => setCategories(cats))
+			.then(cats => setCategories(cats.reverse()))
 			.catch(() => setCategories([]));
 	}, []);
 
