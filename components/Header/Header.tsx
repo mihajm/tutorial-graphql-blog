@@ -13,14 +13,14 @@ const Header = () => {
 
 				<div className="md:float-left block">
 					<Link href="/">
-						<span className="cursor-pointer font-bold text-4xl text-white">Graph Blog</span>
+						<span className="cursor-pointer font-bold text-4xl text-white hover:text-gray-200">Graph Blog</span>
 					</Link>
 				</div>
 
 				<div className="hidden md:float-left md:contents">
 					{categories.map(category => (
 						<Link key={category.slug} href={`/category/${category.slug}`}>
-							<span className="md:float-right mt-2 align-middle text-white ml-4 font-semibold cursor-pointer">{category.name}</span>
+							<span className="md:float-right mt-2 align-middle text-white ml-4 font-semibold cursor-pointer hover:text-gray-200">{category.name}</span>
 						</Link>
 					))}
 				</div>
